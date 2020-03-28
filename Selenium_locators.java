@@ -46,13 +46,11 @@ public class Zadatak_1_0326 {
 		// By.id
 		wd.findElement(By.id("tool-2")).click();
 
-		// By.className
-		wd.findElement(By.className("input-xlarge")).sendKeys("Europe");
+		// By.xpath
+		wd.findElement(By.xpath("//option[contains(text(),'Europe')]")).click();
 
 		Select seleniumCommands = new Select(wd.findElement(By.id("selenium_commands")));
-
 		seleniumCommands.selectByVisibleText("WebElement Commands");
-		// seleniumCommands.selectByIndex(0);
 
 		wd.findElement(By.name("photo")).sendKeys("C:\\Users\\WIN10\\Desktop\\test.png");
 
@@ -62,10 +60,8 @@ public class Zadatak_1_0326 {
 
 		timeWait();
 
-		// By.xpath
-		wd.findElement(By.xpath("//button[@id='submit']")).click();
-
-		timeWait();
+		// By.cssSelector
+		wd.findElement(By.cssSelector("button#submit")).click();
 
 		wd.close();
 
